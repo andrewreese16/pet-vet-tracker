@@ -1,14 +1,16 @@
-<h1>Add Visit for {{ pet.name }}</h1>
 <form method="post">
     {% csrf_token %}
-    <label for="id_reason">Reason for Visit</label>
-    {{ form.reason }} 
+    <label for="id_reason">Reason:</label>
+    {{ form.reason }}
 
     <label for="id_visit_date">Visit Date</label>
     <input type="date" name="visit_date" value="{{ form.visit_date.value }}" class="form-control">
-    
+
+    <label for="id_doctor_name">Doctor Name:</label>
+    {{ form.doctor_name }}
+
+    <label for="id_notes">Notes:</label>
+    {{ form.notes }}
+
     <button type="submit">Save</button>
 </form>
-
-<a href="{% url 'dashboard' %}">Cancel</a>
-

@@ -2,7 +2,8 @@
 <a href="{% url 'add_pet' %}">Add New Pet</a>
 <ul>
     {% for pet in pets %}
-        <li>{{ pet.name }} ({{ pet.species }})
+        <li>
+            <a href="{% url 'pet_detail' pet.id %}">{{ pet.name }}</a> ({{ pet.species }})
             <a href="{% url 'add_visit' pet.id %}">Add Visit</a>
         </li>
     {% endfor %}
