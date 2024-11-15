@@ -1,0 +1,8 @@
+<h1>Add New Pet</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Pet Name" required>
+    <input type="text" name="species" placeholder="Species" required>
+    <input type="text" name="breed" placeholder="Breed (Optional)">
+    <button type="submit">Save</button>
+</form>

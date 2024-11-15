@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pet.name }} Details</title>
+</head>
+<body>
+    <h1>{{ pet.name }}</h1>
+    <p><strong>Species:</strong> {{ pet.species }}</p>
+    <p><strong>Age:</strong> {{ pet.age }}</p>
+
+    <h2>Visit History</h2>
+    <ul>
+        {% for visit in visits %}
+            <li>
+                <strong>Date:</strong> {{ visit.date }} <br>
+                <strong>Reason:</strong> {{ visit.reason }}
+            </li>
+        {% empty %}
+            <li>No visits recorded for this pet yet.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'dashboard' %}">Back to Pet List</a>
+</body>
+</html>

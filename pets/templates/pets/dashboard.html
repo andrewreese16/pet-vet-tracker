@@ -1,0 +1,9 @@
+<h1>Your Pets</h1>
+<a href="{% url 'add_pet' %}">Add New Pet</a>
+<ul>
+    {% for pet in pets %}
+        <li>{{ pet.name }} ({{ pet.species }})
+            <a href="{% url 'add_visit' pet.id %}">Add Visit</a>
+        </li>
+    {% endfor %}
+</ul>
